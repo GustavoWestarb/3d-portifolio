@@ -57,17 +57,18 @@ const Contact = () => {
     });
   };
 
-  const handleFocus = () => setCurrentAnimation('hit');
+  const handleFocus = () => setCurrentAnimation('walk');
   const handleBlur = () => setCurrentAnimation('idle');
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex lg:flex-row flex-col max-container h-[100vh]">
       {alert.show && <Alert {...alert} />}
-      <Alert text='Oiiii sdufhsdufh dsfusdahfusdaf' />
+      
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in touch</h1>
 
         <form 
+          ref={formRef}
           className="w-full flex flex-col gap-7 mt-14"
           onSubmit={handleSubmit}
         >
